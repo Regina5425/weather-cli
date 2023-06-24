@@ -2,10 +2,6 @@
 <br />
 <div align="center">
   <h1 align="center">Weather-cli</h1>
-
-  <p align="center">
-    Консольная программа для вывода прогноза погоды
-  </p>
 </div>
 
 
@@ -40,11 +36,11 @@
    ```
 3. Зарегистрироваться на сайте <a href="https://openweathermap.org/">OpenWeather</a> и получить API_KEY 
 4. Вывод справки для работы с программой
-		```js
+		```sh
 		node weather.js -h
 		```
 5. Запустить программу с помощью команды
-		```js
+		```sh
 		npm start
 		```
 
