@@ -36,13 +36,13 @@
    ```
 3. Зарегистрироваться на сайте <a href="https://openweathermap.org/">OpenWeather</a> и получить API_KEY 
 4. Вывод справки для работы с программой
-		```sh
-		node weather.js -h
-		```
+	```sh
+	node weather.js -h
+	```
 5. Запустить программу с помощью команды
-		```sh
-		npm start
-		```
+	```sh
+	npm start
+	```
 
 
 <!-- CONTACT -->
