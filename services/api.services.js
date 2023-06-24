@@ -2,10 +2,33 @@
 import axios from "axios";
 import { getKeyValue, TOKEN_DICT } from "./storage.services.js";
 
+const getIcon = (icon) => {
+  switch (icon.slice(0, -1)) {
+    case "01":
+      return "☀️";
+    case "02":
+      return "🌤️";
+    case "03":
+      return "☁️";
+    case "04":
+      return "☁️";
+    case "09":
+      return "🌧️";
+    case "10":
+      return "🌦️";
+    case "11":
+      return "🌩️";
+    case "13":
+      return "❄️";
+    case "50":
+      return "🌫️";
+  }
+};
+
 const getWeather = async (city) => {
-  const token = await getKeyValue(TOKEN_DICT.token);
+  const token = process.env.TOKEN ?? await getKeyValue(TOKEN_DICT.token);
   if (!token) {
-    throw new Error("API_KEY is not found");
+    throw new Error("API_KEY не найден");
   }
 
   // 1 вариант
@@ -27,7 +50,7 @@ const getWeather = async (city) => {
   // });
 
   // 2 вариант axios
-  const {data} = await axios.get(
+  const { data } = await axios.get(
     "https://api.openweathermap.org/data/2.5/weather",
     {
       params: {
@@ -38,7 +61,7 @@ const getWeather = async (city) => {
       },
     }
   );
-	return data;
+  return data;
 };
 
-export { getWeather };
+export { getWeather, getIcon };

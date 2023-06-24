@@ -23,15 +23,15 @@ const saveKeyValue = async (key, value) => {
 };
 
 const getKeyValue = async (key) => {
-  if (await isExist(filePath)) {
-    const file = await promises.readFile(filePath);
-    const data = JSON.parse(file);
-    return data[key];
-  }
-  return undefined;
+	if (await isExist(filePath)) {
+		const file = await promises.readFile(filePath);
+		const data = JSON.parse(file);
+		return data[key];
+	}
+	return undefined;
 };
 
-async function isExist(path) {
+const isExist = async (path) => {
   try {
     await promises.stat(path);
     return true;
